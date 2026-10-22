@@ -9,7 +9,8 @@
 |- train.py
 ```
 
-## Train the mt5-small Model
+## Training
+### mt5-small
 - Pleace run the following command:
 ```
 bash train.sh mt5
@@ -30,7 +31,7 @@ bash train.sh mt5
     |- eval_f1.json
 ```
 
-## Train the GPT-2 Model
+### GPT-2
 - Pleace run the following command:
 ```
 bash train.sh gpt2
@@ -46,4 +47,16 @@ bash train.sh gpt2
     |- generation_config.json
     |- model.safetensors
     |- ...
+```
+
+## Inference
+- Run the following command to generate summaries with the trained mT5 model:
+```
+bash run.sh <test_file> <output_file>
+```
+- `<test_file>` should be a JSONL file containing an `id` and a `maintext` field for each example.
+- `<output_file>` is the output JSONL file containing the generated `id` and `title` fields.
+- For example:
+```
+bash run.sh ./data/public.jsonl ./predictions_mt5.jsonl
 ```

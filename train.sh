@@ -12,7 +12,7 @@ elif [ "$1" == 'gpt2' ]; then
     echo "Training GPT-2"
     python train_gpt.py \
         --file_path ./data/train.jsonl \
-        --output_dir ./checkpoints_gpt_revised/ \
+        --output_dir ./checkpoints_gpt/ \
         --max_input_length 1024 \
         --max_out_length 64 \
         --train_batch_size 4 \
